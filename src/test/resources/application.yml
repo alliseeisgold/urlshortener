@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    database-platform: org.hibernate.dialect.H2Dialect
+  flyway:
+    enabled: false
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+app:
+  base-url: http://localhost:8080
+  short-code-length: 7
+  default-ttl-days: 30
+  cache:
+    ttl-seconds: 3600
+
+telegram:
+  bot:
+    enabled: false
+    token: test-token
+    username: TestBot
